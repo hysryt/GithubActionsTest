@@ -16,5 +16,4 @@ jobs:
           key: node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             node-
-      - run: npx node-sass --help
       - run: npm install
