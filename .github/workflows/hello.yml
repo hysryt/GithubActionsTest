@@ -19,4 +19,4 @@ jobs:
       - name: install lftp
         run: "sudo apt-get install lftp"
       - name: mirror
-        run: "lftp -u hysryt,${{ secrets.FTP_PASSWORD }} -e \"mirror --reverse public /home/hysryt/www/laravel;exit\" hysryt.sakura.ne.jp"
+        run: "lftp -u ${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }} -e \"mirror --reverse public ${{ secrets.FTP_REMOTE_PATH}};exit\" ${{ secrets.FTP_SERVER }}"
