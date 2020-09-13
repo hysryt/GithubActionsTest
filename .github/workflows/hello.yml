@@ -17,4 +17,4 @@ jobs:
           restore-keys: |
             node-
       - name: git ftp push
-        run: "git ftp push -u hysryt -p ${{ secrets.FTP_PASSWORD }} -vv --syncroot public -v ftp://hysryt.sakura.ne.jp/www/laravel"
+        run: "git ftp push -u hysryt -p ${{ secrets.FTP_PASSWORD }} --force --syncroot public -v ftp://hysryt.sakura.ne.jp/www/laravel"
