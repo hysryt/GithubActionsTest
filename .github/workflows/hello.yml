@@ -16,10 +16,7 @@ jobs:
           key: node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             node-
-      - name: FTP-Deploy-Action
-        uses: SamKirkland/FTP-Deploy-Action@3.1.1
-        with:
-          ftp-server: ftp://hysryt.sakura.ne.jp/home/hysryt/www/laravel/
-          ftp-username: hysryt
-          ftp-password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: public
+      - name: install lftp
+        run: "sudo apt-get install lftp"
+      - name: mirror
+        run: "lftp -u hysryt,${{ secrets.FTP_PASSWORD }} -e \"mirror --reverse public /home/hysryt/www/laravel;exit\" hysryt.sakura.ne.jp"
