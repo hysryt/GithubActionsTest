@@ -19,9 +19,7 @@ jobs:
       - name: FTP-Deploy-Action
         uses: SamKirkland/FTP-Deploy-Action@3.1.1
         with:
-          ftp-server: ${{ secrets.FTP_SERVER }}
+          ftp-server: ftp://hysryt.sakura.ne.jp/home/hysryt/www/laravel/
           ftp-username: ${{ secrets.FTP_USERNAME }}
           ftp-password: ${{ secrets.FTP_PASSWORD }}
           local-dir: public
-          git-ftp-args: --remote-root=${{ secrets.FTP_REMOTE_PATH }}
-          
