@@ -20,6 +20,6 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@3.1.1
         with:
           ftp-server: ftp://hysryt.sakura.ne.jp/home/hysryt/www/laravel/
-          ftp-username: ${{ secrets.FTP_USERNAME }}
+          ftp-username: hysryt
           ftp-password: ${{ secrets.FTP_PASSWORD }}
           local-dir: public
